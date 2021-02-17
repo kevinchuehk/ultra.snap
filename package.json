@@ -1,10 +1,10 @@
 {
-  "name": "ultra",
+  "name": "ultra-app",
   "version": "0.0.1",
   "main": "src/main.js",
   "license": "MIT",
   "author": "YPCloud",
-  "description": "The ultra",
+  "description": "The ultra-app",
   "scripts": {
     "start": "electron .",
     "test": "TEST=true electron .",
@@ -13,14 +13,14 @@
   },
   "build": {
     "appId": "com.ultra",
-    "productName": "ultra",
+    "productName": "ultra-app",
     "linux": {
       "target": "snap",
       "icon": "gui/icon.png"
     },
     "snap": {
       "confinement": "strict",
-      "summary": "The ultra",
+      "summary": "The ultra-app",
       "grade": "stable",
       "desktop": "gui/ultra.desktop"
     }
