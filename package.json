@@ -1,0 +1,33 @@
+{
+  "name": "ultra",
+  "version": "0.0.1",
+  "main": "src/main.js",
+  "license": "MIT",
+  "author": "YPCloud",
+  "description": "The ultra",
+  "scripts": {
+    "start": "electron .",
+    "test": "TEST=true electron .",
+    "dist:armhf": "electron-builder --linux --armv7l snap",
+    "dist": "electron-builder --linux --x64 snap"
+  },
+  "build": {
+    "appId": "com.ultra",
+    "productName": "ultra",
+    "linux": {
+      "target": "snap",
+      "icon": "gui/icon.png"
+    },
+    "snap": {
+      "confinement": "strict",
+      "summary": "The ultra",
+      "grade": "stable",
+      "desktop": "gui/ultra.desktop"
+    }
+  },
+  "devDependencies": {
+    "electron": "^11.2.1",
+    "electron-builder": "^21.0.15"
+  },
+  "dependencies": {}
+}

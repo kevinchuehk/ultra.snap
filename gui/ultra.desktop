@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=ultra
+Exec=ultra --no-sandbox
+Icon=/snap/ultra/current/gui/icon.png
+Type=Application
+StartupNotify=true
