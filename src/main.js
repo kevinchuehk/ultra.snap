@@ -1,6 +1,6 @@
 'use strict'
 const path = require('path')
-const { BrowserWindow, Menu, app } = require('electron')
+const { BrowserWindow, Menu, app, screen } = require('electron')
 Menu.setApplicationMenu(false)
 const isProduction = !process.env.TEST
 
@@ -17,7 +17,6 @@ const defaultProps = {
 class Window extends BrowserWindow {
     constructor({ url, ...windiwSettings }) {
         super({ ...defaultProps, ...windiwSettings })
-        // this.setMenuBarVisibility(false)
         this.loadURL(url)
 
         this.once('ready-to-show', () => {
@@ -33,11 +32,12 @@ const isFullscreen = () => (width && height) ? false : true
 const isKiosk = isFullscreen
 
 app.on('ready', () => {
+    const { x, y } = screen.getPrimaryDisplay().workArea
     const mainWindow = new Window({
         url: url || 'https://ultra.ypcloud.com',
         fullscreen: isFullscreen(),
         kiosk: isKiosk(),
-        width, height
+        width, height, x, y
     })
     app.focus()
 })
