@@ -1,6 +1,6 @@
 'use strict'
 const path = require('path')
-const { BrowserWindow, Menu, app } = require('electron')
+const { BrowserWindow, Menu, app, screen } = require('electron')
 Menu.setApplicationMenu(false)
 const isProduction = !process.env.TEST
 
@@ -30,9 +30,16 @@ const height = process.env.ULTRA_H || 720
 const url = process.env.ULTRA_URL || ''
 
 app.on('ready', () => {
+    const { x, y } = screen.getPrimaryDisplay().workArea
     const mainWindow = new Window({
         url: url || 'https://ultra.ypcloud.com',
+<<<<<<< HEAD
         width, height
+=======
+        fullscreen: isFullscreen(),
+        kiosk: isKiosk(),
+        width, height, x, y
+>>>>>>> 05bccb21203dd24894a280331dc11d47eb42a443
     })
     app.focus()
 })
