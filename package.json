@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "ultra",
-=======
   "name": "ultra-app",
->>>>>>> 05bccb21203dd24894a280331dc11d47eb42a443
   "version": "0.0.2",
   "main": "src/main.js",
   "license": "MIT",

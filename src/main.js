@@ -33,13 +33,7 @@ app.on('ready', () => {
     const { x, y } = screen.getPrimaryDisplay().workArea
     const mainWindow = new Window({
         url: url || 'https://ultra.ypcloud.com',
-<<<<<<< HEAD
         width, height
-=======
-        fullscreen: isFullscreen(),
-        kiosk: isKiosk(),
-        width, height, x, y
->>>>>>> 05bccb21203dd24894a280331dc11d47eb42a443
     })
     app.focus()
 })
