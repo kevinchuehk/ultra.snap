@@ -28,9 +28,10 @@ const height = process.env.ULTRA_H || 720
 const url = process.env.ULTRA_URL || ''
 
 app.on('ready', () => {
+    const { x, y } = screen.getPrimaryDisplay().workArea
     const mainWindow = new Window({
         url: url || 'https://ultra.ypcloud.com',
-        width, height
+        width, height, x, y
     })
     app.focus()
 })
